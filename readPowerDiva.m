@@ -10,7 +10,7 @@ function ch75 = readPowerDiva(read_raw)
     
     addpath(genpath('/Users/reza/Documents/Matlab_-OrientTuning2Freq'));
     
-    cd('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Exp_MATL_HCN_128_Avg(Full data)');
+    cd('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Matlab Files/20180309/Exp_MATL_HCN_128_Avg');
 
 % read_raw:
 % - 0 for raw EEG
@@ -19,7 +19,7 @@ function ch75 = readPowerDiva(read_raw)
 file_directory = uigetdir();
 
 files = dir(fullfile(file_directory, '*.mat'));
-
+read_raw = 0;
 if read_raw == 0
     for c = 1:length(files) % this loop goes over all the files
         
@@ -34,9 +34,11 @@ if read_raw == 0
                 compare = [];
                 cond_num  = strsplit(files(c).name, '_');
                 cond_num = cond_num(2);
-            else
+            elseif fileNameChecker(files(c-1).name, 'Raw')
                 cond_num  = strsplit(files(c).name, '_');
+                cond_num = cond_num(2);
                 compare = strsplit(files(c-1).name, '_');
+                compare = compare(2);
             end
             
             if c <10
@@ -53,11 +55,9 @@ if read_raw == 0
             else
                 temp = load(strcat('Raw_c0', num2str(c),'_t0', num2str('01'),'.mat'));
                 raw_data = reshape(temp.RawTrial,[size(temp.RawTrial,1)/temp.NmbEpochs, temp.NmbEpochs , 130]);
-                
-            try
-                
-                
             end
+                
+
         end
     end
 end

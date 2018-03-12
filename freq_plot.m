@@ -38,10 +38,10 @@ function z = freq_plot(x, Fs, freq_granularity)
     % this takes care of indexing the intermodulation indexing for plots
     % with different resolutions
     if freq_granularity == 50
-        stem(x1(2),y1(2), 'y');
+        stem(x1(2),y1(2), 'm');
         stem(x1(8),y1(8), 'b');
     else
-        stem(x1(4),y1(4), 'y');
+        stem(x1(4),y1(4), 'm');
         stem(x1(16),y1(16), 'b');
     end
     legend( {'', 'f2','f1', '1f2-1f1','1f2+1f1' }, 'Location', 'NorthEast' )
@@ -53,5 +53,7 @@ function z = freq_plot(x, Fs, freq_granularity)
         ,y1(second_grating_frequency_idx(1)+ first_grating_frequency_idx(1))); % I'm using this to extract the freq amplitude info for 2f1 and 2f2 (2nd harmonic)
 
     hold off;
+    
+    % first exported number from this function is 1f2 - 1f1 and the second number is 1f2+ 1f1
 end
 
