@@ -27,6 +27,6 @@ for i = 1:length(a)
     b2(i) = str2double(b(i));
 end
 
-a2 = max(a2); %number of conditions in the directory 
-b2 = max(b2); % number of trials in each condition 
+    a2 = max(a2); %number of conditions in the directory 
+    b2 = max(b2); % number of trials in each condition 
 end

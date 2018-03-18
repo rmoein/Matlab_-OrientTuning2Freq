@@ -1,4 +1,7 @@
 % clear; clc;
+
+% this script graphs the frequency amplitudes of the conditions of the
+% experiment. Then it 
 freq_ampl_final = [];
 trials = squeeze(cat(3,[1:9], [10:18], [19:27]));
 
