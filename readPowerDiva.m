@@ -19,46 +19,46 @@ function ch75 = readPowerDiva(read_raw)
 file_directory = uigetdir();
 
 files = dir(fullfile(file_directory, '*.mat'));
-read_raw = 0;
-if read_raw == 0
+
+if read_raw == 3
+    files = conditionChecker(files, 3); %filtering the list of files 
+    
     for c = 1:length(files) % this loop goes over all the files
         
-            t = 1;
-            B = [];% this needs to be blank before each condition loop because it will contain the data for each condition
-        
-        if fileNameChecker(files(c).name, 'Raw') == 1 % this checks to see if the name contains 'raw'
-%             disp(files(i).name)
-            % this if statement checks to see if the current file and
-            % previous file have the same number of condition
-            if c == 1
-                compare = [];
-                cond_num  = strsplit(files(c).name, '_');
-                cond_num = cond_num(2);
-            elseif fileNameChecker(files(c-1).name, 'Raw')
-                cond_num  = strsplit(files(c).name, '_');
-                cond_num = cond_num(2);
-                compare = strsplit(files(c-1).name, '_');
-                compare = compare(2);
-            end
-            
-            if c <10
-                c = strcat('0',num2str(c));
-            else 
-                c = num2str(c);
-            end
-            % this if statement separates the data from each condition
-            if cond_num == compare
-                
-                temp = load(strcat('Raw_c0', num2str(c),'_t0', num2str('01'),'.mat'));
-                raw_data = reshape(temp.RawTrial,[size(temp.RawTrial,1)/temp.NmbEpochs, temp.NmbEpochs , 130]);
-                B = cat(4, B, raw_data);
-            else
-                temp = load(strcat('Raw_c0', num2str(c),'_t0', num2str('01'),'.mat'));
-                raw_data = reshape(temp.RawTrial,[size(temp.RawTrial,1)/temp.NmbEpochs, temp.NmbEpochs , 130]);
-            end
+        t = 1;
+        B = [];% this needs to be blank before each condition loop because it will contain the data for each condition
+
+
+        % this if statement checks to see if the current file and
+        % previous file have the same number of condition
+        if c == 1
+            compare = [];
+            cond_num  = strsplit(char(files(c)), '_');
+            cond_num = cond_num(2);
+        else %if fileNameChecker(chatfiles(c-1), 'Raw')
+            cond_num  = strsplit(char(files(c)), '_');
+            cond_num = cond_num(2);
+            compare = strsplit(char(files(c-1)), '_');
+            compare = compare(2);
+        end
+
+        if c <10
+            c = strcat('0',num2str(c));
+        else 
+            c = num2str(c);
+        end
+        % this if statement separates the data from each condition
+        if cond_num == compare
+
+            temp = load(strcat('Raw_c0', num2str(c),'_t0', num2str('01'),'.mat'));
+            raw_data = reshape(temp.RawTrial,[size(temp.RawTrial,1)/temp.NmbEpochs, temp.NmbEpochs , 130]);
+            B = cat(4, B, raw_data);
+        else
+            temp = load(strcat('Raw_c0', num2str(c),'_t0', num2str('01'),'.mat'));
+            raw_data = reshape(temp.RawTrial,[size(temp.RawTrial,1)/temp.NmbEpochs, temp.NmbEpochs , 130]);
+        end
                 
 
-        end
     end
 end
 

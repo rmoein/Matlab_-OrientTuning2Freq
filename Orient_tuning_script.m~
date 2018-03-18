@@ -3,7 +3,7 @@ freq_ampl_final = [];
 trials = squeeze(cat(3,[1:9], [10:18], [19:27]));
 
 cd('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Matlab Files/20180313/Exp_MATL_HCN_128_Avg')
-% cd('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Matlab Files/20180309/Exp_MATL_HCN_128_Avg')
+ %cd('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Matlab Files/20180309/Exp_MATL_HCN_128_Avg')
 for k = 1:3 %number of experiments. in this case we're analyzing the data from 3 experiments 
     % so we're simply looping over the whole thing
 
@@ -32,9 +32,9 @@ for k = 1:3 %number of experiments. in this case we're analyzing the data from 3
             end
             temp = load(strcat('Raw_c0', num2str(jj),'_t0', num2str(i),'.mat'));
             if i ==1
-                ch75 = temp.RawTrial(:,75);
+                ch75 = temp.RawTrial(:,123);
             else
-                ch75 = horzcat(ch75,temp.RawTrial(:,75));
+                ch75 = horzcat(ch75,temp.RawTrial(:,123));
             end
         end
     end
