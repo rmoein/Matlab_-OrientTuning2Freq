@@ -9,7 +9,7 @@ function result = conditionChecker(files, name_of_condition) %filters the list o
 % conditions
 
 result = {};
-if name_of_condition == 1
+if name_of_condition == 1 %extracting Axx files containing trial info
     for i = 1:length(files)
         if fileNameChecker(files(i).name, 'Axx') == 1 && fileNameChecker(files(i).name, 'trials') == 1 
             result = cat(1,result, files(i).name);

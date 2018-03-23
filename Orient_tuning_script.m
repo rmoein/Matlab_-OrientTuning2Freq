@@ -68,24 +68,24 @@ for k = 1:3 %number of experiments. in this case we're analyzing the data from 3
 
     % clear i, j, temp;
 
-    ch75_2 = ch75_2 * ampl_coefficient + shift;
-    ch75_main = ch75_main * ampl_coefficient + shift; % this contains each trial data too
-
-   
-    x = reshape(ch75_main, [840, 5, 9]);
-    % [1:7, 10:16, 19:25]
-    trial_angles = [0,7, 15, 30, 45, 70, 90, 0.3, 0.5];
-    freq_ampl = [];
-    figure(k)
-    for i = 1:9
-        ylim([0,6 *10^-4])
-        x2 = mean(squeeze(x(:,:, i)),2);
-        subplot(3,3,i)
-        freq_ampl(:,i) = freq_plot(x2,420,100);
-        title (strcat('this is plot', num2str(i), 'trial angle: ', num2str(trial_angles(i))))
-    end
-    freq_ampl_final = cat(3, freq_ampl_final, freq_ampl);
-    disp (strcat('Done with the analysis of experiment number', num2str(k)));
+%     ch75_2 = ch75_2 * ampl_coefficient + shift;
+%     ch75_main = ch75_main * ampl_coefficient + shift; % this contains each trial data too
+% 
+%    
+%     x = reshape(ch75_main, [840, 5, 9]);
+%     % [1:7, 10:16, 19:25]
+%     trial_angles = [0,7, 15, 30, 45, 70, 90, 0.3, 0.5];
+%     freq_ampl = [];
+%     figure(k)
+%     for i = 1:9
+%         ylim([0,6 *10^-4])
+%         x2 = mean(squeeze(x(:,:, i)),2);
+%         subplot(3,3,i)
+%         freq_ampl(:,i) = freq_plot(x2,420,100);
+%         title (strcat('this is plot', num2str(i), 'trial angle: ', num2str(trial_angles(i))))
+%     end
+%     freq_ampl_final = cat(3, freq_ampl_final, freq_ampl);
+%     disp (strcat('Done with the analysis of experiment number', num2str(k)));
 end
 
 
