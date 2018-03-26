@@ -17,9 +17,13 @@ cd('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Matlab Files/2018030
 
 
 % read_raw:
-% - 0 for raw EEG
-% - 1 for processed data of each trial
-% - 2 for processed data of each condition (averaged trials)
+% you have three conditions:
+% 1) is Axx_trials, which returns the list of Axx trial files (these are
+% the Axx files that contain trial files)
+% 2) is Axx files. These are averaged files of all trials for each
+% condition
+% 3) Raw files. These files contain the raw EEG files for all trials and
+% conditions
 file_directory = uigetdir();
 
 files = dir(fullfile(file_directory, '*.mat'));
