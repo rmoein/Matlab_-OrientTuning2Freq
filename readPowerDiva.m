@@ -13,6 +13,14 @@ addpath(genpath('/Users/reza/Documents/Matlab_-OrientTuning2Freq'));
 cd('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Matlab Files/20180309/Exp_MATL_HCN_128_Avg');
 
 
+if lower(read_raw) == 'raw'
+    read_raw = 3;
+elseif lower(read_raw) == 'trial'
+    read_raw = 1;
+elseif lower(read_raw) == 'axx'
+    read_raw = 2;
+end
+     
 
 
 

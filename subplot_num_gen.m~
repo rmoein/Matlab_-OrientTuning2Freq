@@ -1,0 +1,17 @@
+num_graphs = 10;
+
+
+a = 1;
+b = 1;
+count = 1;
+while true
+    
+    if mod(count,2) ~= 0 
+        if a*b < num_graphs
+            a= a+1;
+        else
+            break
+        end
+    elseif mod(count,2) == 0
+end
+    
