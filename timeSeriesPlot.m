@@ -24,15 +24,21 @@ end
 
 % mode = 'time'; %or freq
 
-[subplot_x, subplot_y] = subplot_num_gen(str2double(conditions_to_visualize(2))...
-    - str2double(conditions_to_visualize(1))+1); % this finds the
-% optimal dimensions for the subplot
+% this if block determines the size of the subplot plot
+if length(conditions_to_visualize) == 1 
+    [subplot_x, subplot_y] = subplot_num_gen(1);
+    conditions_to_visualize = [conditions_to_visualize;conditions_to_visualize]; %this ensures that the loop below will work
+else  
+    [subplot_x, subplot_y] = subplot_num_gen(str2double(conditions_to_visualize(2))...
+        - str2double(conditions_to_visualize(1))+1); % this finds the
+    % optimal dimensions for the subplot
+end
 
 if cond == 3
     a = data(:,2:11, :, :,:); % excluding the first and the last epochs from the analysis
-    a = squeeze(mean(data,2));
-    a = squeeze(a(:, channel_to_visualize, :, :));
-    jj = 1;
+    a = squeeze(mean(data,2)); % averaging epochs
+    a = squeeze(a(:, channel_to_visualize, :, :)); % squeezing the variable to eliminate extra dimension
+    jj = 1; % loop counter 
     for c = str2double(conditions_to_visualize(1)): str2double(conditions_to_visualize(2)) % looping over conditions
         
         temp = a(:,:,c);
@@ -57,7 +63,7 @@ if cond == 3
                 xlabel('Time (ms)')
                 ylabel('Signal Amplitude (uV)')
                 
-                plot(x, mean(temp,2), 'r', 'LineWidth',2)
+                plot(x, mean(temp,2), 'r', 'LineWidth',2) % this plots the average of trials in red
                 hold off;
             end
         end

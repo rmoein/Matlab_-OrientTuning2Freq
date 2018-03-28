@@ -7,21 +7,27 @@ function [a,b] = subplot_num_gen(num_graphs)
 a = 1;
 b = 1;
 count = 1;
-while true
+if num_graphs == 1
+    a = 1;
+    b = 1;
+else
     
-    if mod(count,2) ~= 0 
-        if a*b < num_graphs
-            a= a+1;
-        else
-            break
+    while true
+
+        if mod(count,2) ~= 0 
+            if a*b < num_graphs
+                a= a+1;
+            else
+                break
+            end
+        elseif mod(count,2) == 0
+            if a*b < num_graphs
+                b= b+1;
+            else
+                break
+            end 
         end
-    elseif mod(count,2) == 0
-        if a*b < num_graphs
-            b= b+1;
-        else
-            break
-        end 
+        count = count+1;
     end
-    count = count+1;
 end
     
