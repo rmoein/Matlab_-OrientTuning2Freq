@@ -30,7 +30,7 @@ function z = timeSeriesPlot(cond, conditions_to_visualize, channel_to_visualize)
 % this block checks the conditions_to_visualize entry and splits it into a
 % matrix of condition numbers
 if exist('conditions_to_visualize', 'var') == 0 
-    disp('please enter a valid condition 1-9 ');
+    disp('please enter a valid condition (i.e. 1-9)');
     return
 elseif contains(conditions_to_visualize, ',')
     
@@ -40,9 +40,8 @@ elseif contains(conditions_to_visualize, '-')
     
     conditions_to_visualize = str2double(strsplit(conditions_to_visualize,'-'));
     conditions_to_visualize = conditions_to_visualize(1):conditions_to_visualize(2);
-else
-    disp('please enter a valid condition');
-    return
+else 
+    conditions_to_visualize = str2double(conditions_to_visualize);
 end
 
 if lower(cond) == 'raw'

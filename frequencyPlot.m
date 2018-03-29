@@ -21,9 +21,8 @@ elseif contains(conditions_to_visualize, '-')
     
     conditions_to_visualize = str2double(strsplit(conditions_to_visualize,'-'));
     conditions_to_visualize = conditions_to_visualize(1):conditions_to_visualize(2);
-else
-    disp('please enter a valid condition');
-    return
+else 
+    conditions_to_visualize = str2double(conditions_to_visualize);
 end
 
 if lower(cond) == 'raw'
