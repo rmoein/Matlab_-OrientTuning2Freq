@@ -65,7 +65,7 @@ if read_raw == 3
     disp(strcat({'this directory contains '}, {num2str(num_conditions)}, {' conditions and '}...
         ,{num2str(num_trials)}, {' trials.'}))
     
-    pause(0.5)
+    pause(1.2)
     for c = 1:num_conditions % this loop goes over all the files
         
         
@@ -131,9 +131,9 @@ if read_raw == 2
     
     output_freq_ampl = zeros([size(temp.Amp,1), size(temp.Amp,2), num_conditions]);
     
-    disp(strcat({'this directory contains '}, {num2str(num_conditions)}, {' conditions and '}));
+    disp(strcat({'this directory contains '}, {num2str(num_conditions)}, {' conditions.'}));
     
-    pause(0.5)
+    pause(1.2)
     for c = 1:num_conditions % this loop goes over all the files
         
         
@@ -192,9 +192,9 @@ if read_raw == 1
     
     output_freq_ampl = zeros([size(temp.Amp,1), size(temp.Amp,2), size(temp.Amp,3), num_conditions]);
     
-    disp(strcat({'this directory contains '}, {num2str(num_conditions)}))
+    disp(strcat({'this directory contains '}, {num2str(num_conditions)}, {' '}, {'conditions.'}))
     
-    pause(0.5)
+    pause(1.2)
     for c = 1:num_conditions % this loop goes over all the files
         
         

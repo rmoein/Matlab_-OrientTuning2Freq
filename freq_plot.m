@@ -49,8 +49,8 @@ function z = freq_plot(x, Fs, freq_granularity)
     xlabel 'Frequency (Hz)'
     ylabel '|y|'
     
-    z = vertcat(y1(second_grating_frequency_idx(1)- first_grating_frequency_idx(1))...
-        ,y1(second_grating_frequency_idx(1)+ first_grating_frequency_idx(1))); % I'm using this to extract the freq amplitude info for 2f1 and 2f2 (2nd harmonic)
+%     z = vertcat(y1(second_grating_frequency_idx(1)- first_grating_frequency_idx(1))...
+%         ,y1(second_grating_frequency_idx(1)+ first_grating_frequency_idx(1))); % I'm using this to extract the freq amplitude info for 2f1 and 2f2 (2nd harmonic)
 
     hold off;
     
