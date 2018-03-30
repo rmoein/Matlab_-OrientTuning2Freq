@@ -59,6 +59,13 @@ if exist('channel_to_visualize', 'var') == 0
     channel_to_visualize = 75; %the default channel to analyze in case no argument is passed for it
 end
 
+o = size(data);
+if o(end) < max(conditions_to_visualize) % checks to make sure the number of conditions the user enters matchthe data in the directory
+    disp('At least one of your selected conditions exceed the number of conditions in this directory.')
+    disp('Please revise the number of conditions.');
+    disp('Quitting the program!');
+    return
+end
 
 
 % this if block determines the size of the subplot plot
@@ -71,6 +78,8 @@ else
 end
 
 if cond == 3
+    
+    
     a = data(:,2:11, :, :,:); % excluding the first and the last epochs from the analysis
     a = squeeze(mean(a,2)); % averaging epochs
     a = squeeze(a(:, channel_to_visualize, :, :)); % squeezing the variable to eliminate extra dimension

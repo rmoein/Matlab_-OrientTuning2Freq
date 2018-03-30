@@ -45,6 +45,24 @@ if exist('channel_to_visualize', 'var') == 0
 end
 
 
+if exist('data','var') == 1
+    o = size(data);
+    if o(end) < max(conditions_to_visualize) % checks to make sure the number of conditions the user enters matchthe data in the directory
+        disp('At least one of your selected conditions exceeds the number of conditions in this directory.')
+        disp('Please revise the number of conditions.');
+        disp('Quitting the program!');
+        return
+    end
+else
+    o = size(ampl);
+    if o(end) < max(conditions_to_visualize) % checks to make sure the number of conditions the user enters matchthe data in the directory
+    disp('At least one of your selected conditions exceeds the number of conditions in this directory.')
+    disp('Please revise the number of conditions.');
+    disp('Quitting the program!');
+    return
+    end
+end
+
 
 % this if block determines the size of the subplot plot
 if length(conditions_to_visualize) == 1

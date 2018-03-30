@@ -3,20 +3,7 @@ function z = axx_freq_plot(x, Fs, plot)
     % Fs is the sampling frequency of the data 
     % you want to show in your graph. Adjust it according to the resolution
     % of the data and your desired range of frequency to be plotted. 
-    
-    % figure('rend','painters','pos',[10 10 1000 700])
 
-%     x = detrend(x,0);
-%     xdft = fft(x);
-%     freq = 0:Fs/length(x):Fs/2;
-% 
-%     y = fft(x);
-%     ly = length(y);
-%     f = (-ly/2:ly/2-1)/ly*Fs;
-%     a = abs(fftshift(y));
-% 
-%     x1= f(f>0); % this is used for plotting the frequency values. 
-%     y1 = a(f>0); % excluding the negative frequency values
     if exist('plot', 'var') == 0
         plot = 1;
     end
@@ -27,12 +14,7 @@ function z = axx_freq_plot(x, Fs, plot)
     
     freq_granularity = 100;
     x1 = 0.5:0.5:50;
-%     y1 = x(2:101);
- 
-%     if freq_granularity == 50
-%         first_grating_frequency_idx = [3:3:freq_granularity]; % these indices are used for graphing them in different colors
-%         second_grating_frequency_idx = [5:5:freq_granularity];
-%     else
+
     y1 = x(2:101); % I'm limiting the data to this range: 0.5 hz to 50 hz
     
     first_grating_frequency_idx = [6:6:freq_granularity]; % these indices are used for graphing them in different colors
@@ -60,12 +42,7 @@ function z = axx_freq_plot(x, Fs, plot)
 
         xlabel 'Frequency (Hz)'
         ylabel '|y|'
-    end
-
-%     z = vertcat(y1(second_grating_frequency_idx(1)- first_grating_frequency_idx(1))...
-%         ,y1(second_grating_frequency_idx(1)+ first_grating_frequency_idx(1))); % I'm using this to extract the freq amplitude info for 2f1 and 2f2 (2nd harmonic)
 
     hold off;
-    % first exported number from this function is 1f2 - 1f1 and the second number is 1f2+ 1f1
 end
 
