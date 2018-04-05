@@ -1,16 +1,25 @@
 function [output_wave, output_freq_ampl] = readPowerDiva(read_raw)
 
+% this function reads the .mat exported files from power diva and saves the
+% outputs into either just output_wave (for conditions 1 and 3) and output_wave and 
+% output_freq_ampl for condition 2 
 
-cd('/Users/reza/Documents/Matlab_-OrientTuning2Freq');
-addpath(genpath('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Exp_MATL_HCN_128_Avg(Full data)'));
+% ***********
+% Variable
+% ***********
 
-addpath(genpath('C:\Users\rezam\Dropbox\Research_Stuff\Neuro\Justin Gardner'));
+% read_raw relates to the sort of data you would like to analyze. Your options are: 
+%  1) Axx_trial 
+%  2) Axx 
+%  3) Raw EEG
 
-addpath(genpath('/Users/reza/mrTools'));
 
-addpath(genpath('/Users/reza/Documents/Matlab_-OrientTuning2Freq'));
+%***********************
+% running this function
+% **********************
 
-cd('/Users/reza/Dropbox/Research_Stuff/Neuro/Justin Gardner/Matlab Files/20180309/Exp_MATL_HCN_128_Avg');
+% simply run readPowerDiva(read_raw) where read_raw can be a number between
+% 1 to 3 
 
 
 if lower(read_raw) == 'raw'
@@ -33,6 +42,8 @@ end
 % 3) Raw files. These files contain the raw EEG files for all trials and
 % conditions
 file_directory = uigetdir();
+
+addpath(file_directory);
 
 files = dir(fullfile(file_directory, '*.mat'));
 

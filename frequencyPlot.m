@@ -1,12 +1,40 @@
 function z = frequencyPlot(cond, conditions_to_visualize, channel_to_visualize)
-% cond = 1;
-% conditions_to_visualize = '18-27';
+% this function plots the frequency amplitudes of EEG data obtained from
+% PowerDiva up to 50 Hz of frequency. 
+
+% ***********
+% Variables
+% ***********
+
+% cond relates to the sort of data you would like to analyze. Your options are: 
+%  1) Axx_trial 
+%  2) Axx 
+%  3) Raw EEG
 
 
+% conditions to visualize is the conditions within the directory you would
+% like to visualize. This is variable, depending on your data. 
 
-% cond = 3;
-% conditions_to_visualize = '18,27, 7';
+% channel to visualize refers to the channel (out of the 128) that you
+% would like to analyze. If you don't pass any argument for this, the
+% program goes for the default channel, which is 75. 
 
+%***********************
+% running this function
+% **********************
+
+% a sample command would be:
+% frequencyPlot (3, '1-9', 75) .then select the directory where the Power
+% Diva files are located.
+
+% the above command visualizes the Raw EEG data for conditions 1 to 9 from
+% channel 75. 
+
+% you have the option of plotting the conditions of choice by using the a
+% format such as: frequencyPlot (3, '1,5,7,20') which will plot the
+% frequncy plot of conditions 1,5,7, and 20. 
+
+% --------------------------------------------------------------------
 
 % this block checks the conditions_to_visualize entry and splits it into a
 % matrix of condition numbers
@@ -24,6 +52,8 @@ elseif contains(conditions_to_visualize, '-')
 else 
     conditions_to_visualize = str2double(conditions_to_visualize);
 end
+
+
 
 if lower(cond) == 'raw'
     cond = 3;
@@ -103,7 +133,7 @@ if cond == 3
         
         x = 0:1000/size(data,1):1000;
         x = x(1:size(data,1)); %timestamp for graphing
-        
+        % disp(jj) for debugging purposes 
         subplot(subplot_x, subplot_y, jj)
         freq_plot(a(:, conditions_to_visualize(jj)), 420, 100)
         ylim([0, ampls]);
@@ -130,7 +160,6 @@ elseif cond == 2
     for c = conditions_to_visualize
         
         subplot(subplot_x, subplot_y, jj)
-        
         hold on;
         axx_freq_plot(a(:,conditions_to_visualize(jj)));
         ylim([0, ampl_scale]);

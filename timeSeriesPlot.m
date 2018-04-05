@@ -27,6 +27,12 @@ function z = timeSeriesPlot(cond, conditions_to_visualize, channel_to_visualize)
 % the above command visualizes the Raw EEG data for conditions 1 to 9 from
 % channel 75. 
 
+% you have the option of plotting the conditions of choice by using the a
+% format such as: frequencyPlot (3, '1,5,7,20') which will plot the
+% frequncy plot of conditions 1,5,7, and 20. 
+
+% --------------------------------------------------------------------
+
 % this block checks the conditions_to_visualize entry and splits it into a
 % matrix of condition numbers
 if exist('conditions_to_visualize', 'var') == 0 
