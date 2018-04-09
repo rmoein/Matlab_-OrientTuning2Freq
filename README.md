@@ -1,6 +1,6 @@
 # Matlab_-OrientTuning2Freq
 
-There are three main functions in this repository. 
+There are three main functions in this repository (the rest of them are dependencies for these main functions). 
 
 1) readPowerDiva
 2) frequencyPlot
@@ -14,6 +14,10 @@ this function reads the .mat exported files from power diva and saves them in on
 3) reads raw EEG data
 
 Depending on the option you choose, you will have different outputs. The output is either just "output_wave" variable (for conditions 1 and 3) or "output_wave" and "output_freq_ampl" for condition 2 (since this condition includes processed data from Power Diva, and the frequency amplitudes are exported from Power Diva as well). 
+
+***********************
+Running This Function
+**********************
 
 To run the program (example): run readPowerDiva(3) ==> Select desired directory where exported files are located (this example code reads all of the raw EEG files within the directory.)
 
@@ -41,7 +45,7 @@ program goes for the default channel, which is 75.
 Running This Function
 **********************
 
-a sample command would be:
+A sample command would be:
 frequencyPlot (3, '1-9', 75) .then select the directory where the Power
 Diva files are located.
 
@@ -79,8 +83,8 @@ program goes for the default channel, which is 75.
 Running This Function
 **********************
 
-a sample command would be:
-timeSeriesPlot (3, '1-9', 75) .then select the directory where the Power
+A sample command would be:
+timeSeriesPlot (3, '1-9', 75) . Then select the directory where the Power
 Diva files are located. 
 the above command visualizes the Raw EEG data for conditions 1 to 9 from
 channel 75. 
