@@ -9,9 +9,9 @@ There are three main functions in this repository (the rest of them are dependen
 ### readPowerDiva
 this function reads the .mat exported files from power diva and saves them in one or two variables. There are three possilble inputs for this function:
 
-1) reads Axx files that include each individual trial for each condition 
-2) reads reading processed Axx data 
-3) reads raw EEG data
+1) reads Axx files that include each individual trial for each condition ( readPowerDiva(1) ) 
+2) reads reading processed Axx data ( readPowerDiva(2) ) 
+3) reads raw EEG data (readPowerDiva(3) )
 
 Depending on the option you choose, you will have different outputs. The output is either just "output_wave" variable (for conditions 1 and 3) or "output_wave" and "output_freq_ampl" for condition 2 (since this condition includes processed data from Power Diva, and the frequency amplitudes are exported from Power Diva as well). 
 
