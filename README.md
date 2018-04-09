@@ -7,7 +7,6 @@ There are three main functions in this repository (the rest of them are dependen
 3) timeSeriesPlot
 
 ### readPowerDiva
-readPowerDiva(input)
 this function reads the .mat exported files from power diva and saves them in one or two variables. There are three possilble inputs for this function:
 
 1) reads Axx files that include each individual trial for each condition 
