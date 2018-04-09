@@ -19,7 +19,7 @@ Depending on the option you choose, you will have different outputs. The output 
 Running This Function
 **********************
 
-To run the program (example): run readPowerDiva(3) ==> Select desired directory where exported files are located (this example code reads all of the raw EEG files within the directory.)
+Example: run readPowerDiva(3) ==> Select desired directory where exported files are located (this example reads all of the raw EEG files within the directory.)
 
 ### frequencyPlot
 this function plots the frequency amplitudes of EEG data obtained from PowerDiva up to 50 Hz of frequency. 
