@@ -38,7 +38,7 @@ would like to analyze. If you don't pass any argument for this, the
 program goes for the default channel, which is 75. 
 
 ***********************
-running this function
+Running This Function
 **********************
 
 a sample command would be:
@@ -51,3 +51,40 @@ channel 75.
 you also have the option of plotting the conditions of choice by using the a
 format such as: frequencyPlot (3, '1,5,7,20') which will plot the
 frequncy plot of conditions 1,5,7, and 20. 
+
+
+### timeSeriesPlot
+
+This function plots the time series EEG data obtained from Power Diva. 
+
+***********
+Input Variables
+***********
+
+cond relates to the sort of data you would like to analyze. Your options are: 
+ 1) Axx_trial 
+ 2) Axx 
+ 3) Raw EEG
+
+conditions to visualize is the conditions within the directory you would
+like to visualize. This is variable, depending on your data. 
+
+channel to visualize refers to the channel (out of the 128) that you
+would like to analyze. If you don't pass any argument for this, the
+program goes for the default channel, which is 75. 
+
+***********************
+Running This Function
+**********************
+
+a sample command would be:
+timeSeriesPlot (3, '1-9', 75) .then select the directory where the Power
+Diva files are located. 
+the above command visualizes the Raw EEG data for conditions 1 to 9 from
+channel 75. 
+
+You also have the option of plotting the conditions of choice by using the a
+format such as: frequencyPlot (3, '1,5,7,20') which will plot the
+frequncy plot of conditions 1,5,7, and 20. 
+
+
