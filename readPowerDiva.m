@@ -1,4 +1,8 @@
 function [output_wave, output_freq_ampl] = readPowerDiva(read_raw)
+ 
+% Wrtitten by Reza Moein Taghavi April of 2018
+% if you have any questions, contact me at rezamoeint@gmail.com
+
 
 % this function reads the .mat exported files from power diva and saves the
 % outputs into either just output_wave (for conditions 1 and 3) and output_wave and 

@@ -1,4 +1,8 @@
 function z = frequencyPlot(cond, conditions_to_visualize, channel_to_visualize)
+
+% Wrtitten by Reza Moein Taghavi April of 2018
+% if you have any questions, contact me at rezamoeint@gmail.com
+
 % this function plots the frequency amplitudes of EEG data obtained from
 % PowerDiva up to 50 Hz of frequency. 
 
@@ -104,6 +108,15 @@ else
 end
 
 
+%*************************************************************
+%*************************************************************
+
+% this section is for reading the raw EEG data
+
+%*************************************************************
+%*************************************************************
+
+
 if cond == 3
     a = squeeze(data(:,2:size(data,2) - 1, channel_to_visualize, :,:)); % excluding the first and the last epochs from the analysis
     % a = squeeze(data(:,:, channel_to_visualize, :,:));
@@ -168,6 +181,15 @@ elseif cond == 2
         jj = jj +1;
     end
     
+    
+%*************************************************************
+%*************************************************************
+
+% this section is for reading the processed Axx files WITH trial data
+
+%*************************************************************
+%*************************************************************
+
     
 elseif cond == 1
     jj = 1;

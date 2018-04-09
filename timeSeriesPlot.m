@@ -1,4 +1,8 @@
 function z = timeSeriesPlot(cond, conditions_to_visualize, channel_to_visualize)
+
+% Wrtitten by Reza Moein Taghavi April of 2018
+% if you have any questions, contact me at rezamoeint@gmail.com
+
 % This function plots the time series EEG data obtained from Power Diva. 
 
 % ***********
@@ -83,6 +87,16 @@ else
     % optimal dimensions for the subplot
 end
 
+
+
+%*************************************************************
+%*************************************************************
+
+% this section is for reading the raw EEG data
+
+%*************************************************************
+%*************************************************************
+
 if cond == 3
     
     
@@ -150,7 +164,16 @@ elseif cond == 2
         title(strcat({'Condition'}, {' '}, {num2str(conditions_to_visualize(jj))}))
         jj = jj +1;
     end
+
     
+%*************************************************************
+%*************************************************************
+
+% this section is for reading the processed Axx files WITH trial data
+
+%*************************************************************
+%*************************************************************
+
 elseif cond == 1
     a = data(:, :, :,:);
     a = squeeze(a(:, channel_to_visualize, :, :));
