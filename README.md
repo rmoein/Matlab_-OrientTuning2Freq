@@ -52,7 +52,7 @@ you also have the option of plotting the conditions of choice by using the a
 format such as: frequencyPlot (3, '1,5,7,20') which will plot the
 frequncy plot of conditions 1,5,7, and 20. 
 
-![alt text](https://ibb.co/eo9Eex)
+![alt text](https://image.ibb.co/cOHd6c/untitled.jpg)
 
 
 ### timeSeriesPlot
