@@ -1,4 +1,4 @@
-# Matlab_-OrientTuning2Freq
+# Matlab_OrientTuning2Freq
 
 There are three main functions in this repository (the rest of them are dependencies for these main functions). 
 
